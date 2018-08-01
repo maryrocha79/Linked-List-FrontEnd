@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import UserProfilePlaceholder from '../../images/user_placeholder.png';
 import './style.css';
 
@@ -67,6 +68,11 @@ export default class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  profilePic: PropTypes.string,
+  searchCategories: PropTypes.array
+};
 
 Header.defaultProps = {
   searchCategories: ['companies', 'jobs', 'people'],

@@ -1,0 +1,36 @@
+.Card-main {
+  background-color: white;
+  display: flex;
+  width: 600px;
+  height: 90px;
+  box-shadow: 2px 3px 10px #888888;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Card-image {
+  height: 80px;
+  width: 80px;
+  margin-left: 10px;
+}
+
+.Card-button {
+  background-color: #00695c;
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  width: 70px;
+  margin-right: 75px;
+}
+
+.Card-info {
+  margin-right: 150px;
+}
+.Card-title {
+  display: flex;
+  align-items: center;
+}
+.Card-company {
+  margin-left: 10px;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import LinkedListLogo from '../../images/LinkedList_logo.png';
 import './style.css';
 
@@ -83,3 +84,9 @@ export default class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  authRequest: PropTypes.function,
+  setError: PropTypes.function,
+  clearError: PropTypes.function
+};
