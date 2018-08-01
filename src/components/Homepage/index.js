@@ -6,12 +6,22 @@ import CompanyProfilePlaceholder from '../../images/company_placeholder.png';
 import './style.css';
 
 export default class Homepage extends Component {
-  componentDidMount() {
-    this.props.fetchJobsRequest();
+  state = { loading: true };
+  async componentDidMount() {
+    await this.props.fetchJobsRequest();
+    await Promise.all(
+      this.props.jobs.map(job => this.props.fetchCompanyRequest(job.company))
+    );
+    this.setState({
+      loading: false
+    });
   }
 
   render() {
     const { jobs } = this.props;
+    if (this.state.loading) {
+      return <h1> Loading... </h1>;
+    }
     let displayJobs;
     if (jobs.length === 0) {
       displayJobs = (
@@ -23,7 +33,7 @@ export default class Homepage extends Component {
         return (
           <div key={job.id}>
             <Card
-              imageUrl={this.props.companyImg}
+              imageUrl={this.props.companies[job.company].logo}
               cardTitle={job.title}
               cardCompany={job.company}
               cardDetails={details}
