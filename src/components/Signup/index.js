@@ -141,8 +141,8 @@ export default class Signup extends Component {
   }
 }
 
-Signup.propTypes = {
-  authRequest: PropTypes.function,
-  setError: PropTypes.function,
-  clearError: PropTypes.function
-};
+// Signup.propTypes = {
+//   authRequest: PropTypes.function,
+//   setError: PropTypes.function,
+//   clearError: PropTypes.function
+// };

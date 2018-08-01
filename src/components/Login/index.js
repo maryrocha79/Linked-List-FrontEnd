@@ -85,8 +85,8 @@ export default class Login extends Component {
   }
 }
 
-Login.propTypes = {
-  authRequest: PropTypes.function,
-  setError: PropTypes.function,
-  clearError: PropTypes.function
-};
+// Login.propTypes = {
+//   authRequest: PropTypes.function,
+//   setError: PropTypes.function,
+//   clearError: PropTypes.function
+// };
