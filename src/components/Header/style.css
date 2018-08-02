@@ -25,6 +25,27 @@
   background-color: #48a999;
 }
 
+.dropdown-menu {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: white;
+  background-color: #48a999;
+  width: 7rem;
+}
+
+.header-menu {
+  height: 6rem;
+  margin-bottom: 0;
+  width: 7rem;
+  background-color: #718792;
+  height: 100%;
+  color: white;
+}
+
+ul {
+  text-decoration: none;
+}
+
 .search-form {
   flex: 1;
   display: flex;

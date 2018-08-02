@@ -28,10 +28,34 @@ export default class Header extends Component {
   handleClick = idx => {
     this.setState({ searchCategoryIdx: idx });
   };
+
+  handleMenuClick = evt => {
+    this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
+  };
+
   // this.props.currentUser.photo
   render() {
     const { searchText, searchCategoryIdx } = this.state;
     const { searchCategories, displayName, profilePic } = this.props;
+
+    let dropdownMenu;
+    if (this.state.isDropdownVisible) {
+      dropdownMenu = (
+        <div className="dropdown-menu">
+          <ul>
+            <Link to="/">
+              <li>User Profile</li>
+            </Link>
+            <Link to="/">
+              <li>Logout</li>
+            </Link>
+          </ul>
+        </div>
+      );
+    } else {
+      dropdownMenu = <div />;
+    }
+
     return (
       <div className="Header">
         <Link to="/" className="Header-logo">
@@ -63,20 +87,27 @@ export default class Header extends Component {
           </div>
           <input type="submit" value="Search" className="search-btn" />
         </form>
-        <div className="profile-area">
-          <img
-            src={
-              this.props.currentUser.photo
-                ? this.props.currentUser.photo
-                : profilePic
-            }
-            alt="Profile"
-          />
-          <span>
-            {this.props.currentUser.username
-              ? this.props.currentUser.username
-              : displayName}
-          </span>
+        <div
+          className="header-menu"
+          onClick={this.handleMenuClick}
+          /** onMouseLeave={this.handleMouseLeave} **/
+        >
+          <div className="profile-area">
+            <img
+              src={
+                this.props.currentUser.photo
+                  ? this.props.currentUser.photo
+                  : profilePic
+              }
+              alt="Profile"
+            />
+            <span>
+              {this.props.currentUser.username
+                ? this.props.currentUser.username
+                : displayName}
+            </span>
+          </div>
+          {dropdownMenu}
         </div>
       </div>
     );

@@ -33,7 +33,11 @@ export default class Homepage extends Component {
         return (
           <div key={job.id}>
             <Card
-              imageUrl={this.props.companies[job.company].logo}
+              imageUrl={
+                this.props.companies[job.company].logo
+                  ? this.props.companies[job.company].logo
+                  : this.props.companyImg
+              }
               cardTitle={job.title}
               cardCompany={job.company}
               cardDetails={details}
