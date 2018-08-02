@@ -33,7 +33,6 @@ export default class Header extends Component {
     this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
   };
 
-  // this.props.currentUser.photo
   render() {
     const { searchText, searchCategoryIdx } = this.state;
     const { searchCategories, displayName, profilePic } = this.props;
@@ -43,12 +42,11 @@ export default class Header extends Component {
       dropdownMenu = (
         <div className="dropdown-menu">
           <ul>
-            <Link to="/">
+            <Link to="/profile">
               <li>User Profile</li>
             </Link>
-            <Link to="/">
-              <li>Logout</li>
-            </Link>
+
+            <li onClick={this.props.logout}>Logout</li>
           </ul>
         </div>
       );

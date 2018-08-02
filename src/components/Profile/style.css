@@ -1,0 +1,38 @@
+.Card {
+  display: flex;
+  justify-content: center;
+}
+
+.Profile-main {
+  display: block;
+}
+
+.Profile-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Profile-card {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+  background-color: white;
+  width: 650px;
+  height: 325px;
+  box-shadow: 2px 3px 10px #888888;
+  margin-bottom: 20px;
+}
+
+.Profile-image {
+  height: 150px;
+  width: 150px;
+  margin-left: 10px;
+}
+
+Card {
+  width: 800px;
+}
