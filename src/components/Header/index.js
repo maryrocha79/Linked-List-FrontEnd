@@ -13,6 +13,9 @@ const DEFAULT_STATE = {
 export default class Header extends Component {
   state = DEFAULT_STATE;
 
+  componentDidMount() {
+    this.props.fetchCurrentUser();
+  }
   handleSearch = e => {
     e.preventDefault();
     // TODO: search
@@ -25,7 +28,7 @@ export default class Header extends Component {
   handleClick = idx => {
     this.setState({ searchCategoryIdx: idx });
   };
-
+  // this.props.currentUser.photo
   render() {
     const { searchText, searchCategoryIdx } = this.state;
     const { searchCategories, displayName, profilePic } = this.props;
@@ -61,8 +64,19 @@ export default class Header extends Component {
           <input type="submit" value="Search" className="search-btn" />
         </form>
         <div className="profile-area">
-          <img src={profilePic} alt="Profile" />
-          <span>{displayName}</span>
+          <img
+            src={
+              this.props.currentUser.photo
+                ? this.props.currentUser.photo
+                : profilePic
+            }
+            alt="Profile"
+          />
+          <span>
+            {this.props.currentUser.username
+              ? this.props.currentUser.username
+              : displayName}
+          </span>
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../Header';
+import Header from '../../containers/Header';
 import Card from '../Card';
 import CompanyProfilePlaceholder from '../../images/company_placeholder.png';
 import './style.css';
@@ -48,7 +48,7 @@ export default class Homepage extends Component {
         <Header />
         <div className="feed">
           <h2>
-            <i class="fas fa-clipboard-list" /> Jobs
+            <i className="fas fa-clipboard-list" /> Jobs
           </h2>
           <div className="cards">{displayJobs}</div>
         </div>

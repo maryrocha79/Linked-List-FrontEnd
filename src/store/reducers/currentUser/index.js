@@ -13,11 +13,9 @@ const DEFAULT_STATE = {
 
 export default function currentUser(state = DEFAULT_STATE, action) {
   switch (action.type) {
-    case t.FETCH_CURRENT_USER_SUCCESS:
-      return {
-        ...state,
-        ...action.user
-      };
+    case t.FETCH_USER_SUCCESS:
+      console.log(action.user);
+      return { ...state, ...action.user };
     case t.LOGOUT:
       return DEFAULT_STATE;
     case t.CREATE_USER_SUCCESS:

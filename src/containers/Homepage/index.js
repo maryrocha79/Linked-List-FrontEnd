@@ -6,6 +6,7 @@ import { fetchCompanyRequest } from '../../store/actions/companies';
 function mapStateToProps(reduxState) {
   return {
     currentUser: reduxState.currentUser,
+    displayName: reduxState.currentUser.first_name,
     jobs: reduxState.jobs,
     companies: reduxState.companies
   };
