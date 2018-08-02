@@ -4,6 +4,17 @@ import PropTypes from 'prop-types';
 
 export default class Card extends Component {
   render() {
+    let applyButton;
+    if (this.props.userAppliedTo) {
+      applyButton = <button className="Card-button">Applied To</button>;
+    } else {
+      applyButton = (
+        <button onClick={this.props.applyToJob} className="Card-button">
+          Apply
+        </button>
+      );
+    }
+
     return (
       <div className="Card-main">
         <img
@@ -20,7 +31,7 @@ export default class Card extends Component {
           <small className="Card-details">{this.props.cardDetails}</small>
         </div>
 
-        <button className="Card-button">Apply</button>
+        {applyButton}
       </div>
     );
   }

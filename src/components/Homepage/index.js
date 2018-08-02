@@ -9,6 +9,7 @@ export default class Homepage extends Component {
   state = { loading: true };
   async componentDidMount() {
     await this.props.fetchJobsRequest();
+    await this.props.fetchCurrentUser();
     await Promise.all(
       this.props.jobs.map(job => this.props.fetchCompanyRequest(job.company))
     );
@@ -41,6 +42,8 @@ export default class Homepage extends Component {
               cardTitle={job.title}
               cardCompany={job.company}
               cardDetails={details}
+              userAppliedTo={this.props.currentUser.applied_to.includes(job.id)}
+              applyToJob={() => this.props.createJobApp(job.id)}
             />
           </div>
         );

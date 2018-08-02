@@ -24,3 +24,16 @@ export function fetchJobsSuccess(jobs) {
 export function fetchJobsFail(error) {
   return { type: t.FETCH_JOBS_FAIL, error };
 }
+
+export function createJobApp(job_id) {
+  return async dispatch => {
+    try {
+      dispatch({ type: t.CREATE_JOB_APP_REQUEST });
+      let url = '/jobs/' + job_id + '/applications';
+      await callAPI('post', url, true);
+      dispatch({ type: t.CREATE_JOB_APP_SUCCESS });
+    } catch (error) {
+      dispatch({ type: t.CREATE_JOB_APP_FAIL, error });
+    }
+  };
+}
