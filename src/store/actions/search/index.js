@@ -7,11 +7,7 @@ export function fetchJobsSearch(value) {
       // tell everyone we're making the request
       dispatch({ type: t.FETCH_JOBS_SEARCH_REQUEST });
       // call the API for /jobs, auth required
-      let jobs = await callAPI(
-        'get',
-        `/jobs?offset=1&limit=50&search=${value}`,
-        true
-      );
+      let jobs = await callAPI('get', `/jobs?search=${value}`, true);
       // dispatch the success action creator and the jobs that we got back
       dispatch(fetchJobsSearchSuccess(jobs));
     } catch (error) {

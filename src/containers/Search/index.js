@@ -10,7 +10,8 @@ function mapStateToProps(reduxState) {
     currentUser: reduxState.currentUser,
     displayName: reduxState.currentUser.first_name,
     jobs: reduxState.jobs,
-    companies: reduxState.companies
+    companies: reduxState.companies,
+    search: reduxState.search
   };
 }
 
