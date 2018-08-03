@@ -18,6 +18,11 @@ export default class Homepage extends Component {
     });
   }
 
+  handleApply = async jobId => {
+    await this.props.createJobApp(jobId);
+    await this.props.fetchCurrentUser();
+  };
+
   render() {
     const { jobs } = this.props;
     if (this.state.loading) {
@@ -43,7 +48,7 @@ export default class Homepage extends Component {
               cardCompany={job.company}
               cardDetails={details}
               userAppliedTo={this.props.currentUser.applied_to.includes(job.id)}
-              applyToJob={() => this.props.createJobApp(job.id)}
+              applyToJob={() => this.handleApply(job.id)}
             />
           </div>
         );
