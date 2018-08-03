@@ -6,6 +6,7 @@ import Homepage from '../../containers/Homepage';
 import Profile from '../../containers/Profile';
 import NoAuthRoute from '../../containers/NoAuthRoute';
 import ProtectedRoute from '../../containers/ProtectedRoute';
+import Search from '../../containers/Search';
 
 export default class Main extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class Main extends Component {
           {/* ProtectedRoutes only let you go to them if you are authenticated */}
           <ProtectedRoute exact path="/" component={Homepage} />
           <ProtectedRoute exact path="/profile" component={Profile} />
+          <ProtectedRoute exact path="/search" component={Search} />
         </Switch>
       </div>
     );

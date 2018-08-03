@@ -11,7 +11,11 @@ const DEFAULT_STATE = {
 };
 
 export default class Header extends Component {
-  state = DEFAULT_STATE;
+  constructor(props) {
+    super(props);
+
+    this.state = DEFAULT_STATE;
+  }
 
   componentDidMount() {
     this.props.fetchCurrentUser();
@@ -19,6 +23,8 @@ export default class Header extends Component {
   handleSearch = e => {
     e.preventDefault();
     // TODO: search
+    console.log(this.props);
+    this.props.history.push(`/search?term=${this.state.searchText}`);
   };
 
   handleChange = e => {
