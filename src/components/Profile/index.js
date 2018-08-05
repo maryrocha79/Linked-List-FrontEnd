@@ -21,7 +21,7 @@ export default class Profile extends Component {
       );
     }
 
-    const { jobs } = this.props;
+    // const { jobs } = this.props;
     if (this.state.loading) {
       return <h1> Loading... </h1>;
     }

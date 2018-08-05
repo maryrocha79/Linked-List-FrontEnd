@@ -25,6 +25,17 @@ export default class Header extends Component {
     // TODO: search
     console.log(this.props);
     this.props.history.push(`/search?term=${this.state.searchText}`);
+    // this.props.history.push(
+    //   `/search?${this.state.searchCategoryIdx}=${this.state.searchText}`
+    // );
+    // this.props.history.push({
+    //   pathname: '/search',
+    //   search: `?${this.props.searchCategoryIdx}=${this.state.searchText}`
+    // });
+    // this.history.pushState(
+    //   this.props.searchCategoryIdx,
+    //   `/search?term=${this.state.searchText}`
+    // );
   };
 
   handleChange = e => {
@@ -82,8 +93,8 @@ export default class Header extends Component {
                 <input
                   type="radio"
                   id={category}
-                  checked={i === searchCategoryIdx}
-                  onChange={() => this.handleClick(i)}
+                  checked={searchCategories[i] === searchCategoryIdx}
+                  onChange={() => this.handleClick(searchCategories[i])}
                 />
                 <label htmlFor={category}>{category}</label>
               </div>

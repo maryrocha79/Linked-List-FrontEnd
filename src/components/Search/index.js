@@ -15,6 +15,10 @@ export default class Search extends Component {
     await this.props.fetchJobsSearch(
       queryString.parse(this.props.location.search).term
     );
+    console.log(
+      'queryString.parse===>>',
+      queryString.parse(this.props.location.search)
+    );
     this.setState({
       loading: false
     });
